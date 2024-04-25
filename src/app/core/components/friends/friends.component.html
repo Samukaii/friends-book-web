@@ -1,0 +1,30 @@
+<div class="pt-2 pl-3 pr-3">
+	<div class="w-full container pb-2 border--bottom flex justify-content-center">
+		@if (repository.data().length) {
+			<div [style.width]="size()" class="friends flex gap-2">
+				<p-carousel [value]="repository.data()" [numVisible]="visibleItems()" [numScroll]="visibleItems()"
+							[circular]="false" [showIndicators]="false">
+					<ng-template let-user pTemplate="item">
+						<div class="pl-1 pr-1">
+							@if (!repository.loading()) {
+								<app-avatar
+									[pTooltip]="'Ver perfil de ' + user.name"
+									appUserAvatarInfo
+									[userId]="user.id"
+									class="friend"
+									[imageUrl]="user.profile?.url"
+								/>
+							} @else {
+								<p-skeleton
+									width="61px"
+									shape="circle"
+									height="61px"
+								/>
+							}
+						</div>
+					</ng-template>
+				</p-carousel>
+			</div>
+		}
+	</div>
+</div>

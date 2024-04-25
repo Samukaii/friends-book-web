@@ -1,0 +1,14 @@
+:host {
+	width: 100%;
+}
+
+textarea {
+	border: none;
+	&:focus {
+		box-shadow: inset 0 -1px 0 0 #3f51b5;
+	}
+}
+
+img {
+	max-width: 100%;
+}

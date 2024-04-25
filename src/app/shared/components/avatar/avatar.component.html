@@ -1,0 +1,17 @@
+@if(fullUrl(); as url) {
+	<p-avatar
+		[style]="{ 'background-color': 'var(--secondary-color)', color: '#ffffff' }"
+		[image]="url"
+		[size]="size()"
+		[shape]="shape()"
+	>
+	</p-avatar>
+} @else {
+	<p-avatar
+		[style]="{ 'background-color': 'var(--secondary-color)', color: '#ffffff' }"
+		icon="pi pi-user"
+		[size]="size()"
+		[shape]="shape()"
+	>
+	</p-avatar>
+}

@@ -1,0 +1,37 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="card">
+	<div class="flex">
+		<app-avatar
+			[imageUrl]="userProfile()"
+		/>
+
+		<textarea formControlName="title" class="w-full" pInputTextarea [autoResize]="true" placeholder="O que você está pensando, {{userName()}}?"></textarea>
+	</div>
+
+	<p-divider/>
+
+	<div class="w-full">
+		@if (imageUrl) {
+			<img [src]="imageUrl" alt="">
+		}
+
+
+		<div class="flex justify-content-between">
+			<p-button
+				accept="image/*"
+				appFileUpload (fileUpload)="onFileUpload($event)" severity="danger" [text]="true" styleClass="flex gap-1">
+				<mat-icon>
+					photo_library
+				</mat-icon>
+				{{imageUrl ? 'Trocar de foto' : 'Adicionar uma foto'}}
+
+			</p-button>
+
+			<p-button
+				[disabled]="form.invalid"
+				type="submit">
+				Compartilhar
+			</p-button>
+		</div>
+	</div>
+</form>
+

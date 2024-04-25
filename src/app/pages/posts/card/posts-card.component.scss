@@ -1,0 +1,32 @@
+:host {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	gap: 1rem;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 1.3rem;
+	margin: 0 0 .5rem;
+}
+
+strong {
+	font-size: 1rem;
+	text-transform: capitalize;
+}
+p-image ::ng-deep {
+	.image {
+		max-width: 100%;
+	}
+}
+
+.description {
+	font-size: 1rem;
+}
+
+.hide {
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+}

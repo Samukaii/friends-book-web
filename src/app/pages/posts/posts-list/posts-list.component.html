@@ -1,0 +1,22 @@
+@if (!loading()) {
+	@for (post of posts(); track post.id) {
+		<app-posts-card
+			[actions]="actionsFn() | call: post"
+			[post]="post"
+		/>
+	} @empty {
+		<div class="w-full no-results card">
+			<div class="flex flex-column gap-2 align-items-center w-full">
+				<img src="assets/ilustrations/no-results.svg">
+				<strong>
+					{{notFoundMessage()}}
+				</strong>
+			</div>
+
+		</div>
+	}
+} @else {
+	<app-posts-loading>
+
+	</app-posts-loading>
+}

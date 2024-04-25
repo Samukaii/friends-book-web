@@ -1,0 +1,9 @@
+<app-profile
+	[info]="repository.data()"
+	(follow)="follow()"
+	(unfollow)="unfollow()"
+	notFoundMessage="Este usuário ainda não criou nenhuma publicação"
+	[loading]="repository.loading()"
+	[readonly]="true"
+
+/>

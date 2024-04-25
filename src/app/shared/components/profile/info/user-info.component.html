@@ -1,0 +1,68 @@
+<div class="user-overview w-full flex flex-column align-items-center">
+	@if (!loading()) {
+		<div
+			class="image-cover">
+			@if (!readonly()) {
+				<div
+					appFileUpload
+					(fileUpload)="coverChange.emit($event[0])"
+					class="image-overlay">
+					<i class="pi pi-pencil"></i>
+					<strong>
+						Alterar imagem de capa
+					</strong>
+				</div>
+			}
+
+
+			@if (userCover()) {
+				<img [src]="userCover()" alt="">
+			}
+		</div>
+		<div class="avatar-container flex flex-column align-items-center gap-2">
+			<div
+				class="image-profile">
+				@if (!readonly()) {
+					<div
+						pTooltip="Alterar foto de perfil"
+						appFileUpload
+						(fileUpload)="profileChange.emit($event[0])"
+						class="image-overlay">
+						<i class="pi pi-pencil"></i>
+					</div>
+				}
+				<app-avatar
+					[imageUrl]="user().profile?.url"
+					size="xlarge"
+				/>
+			</div>
+
+			<div class="flex flex-column gap-2 align-items-center mb-2">
+				<h2 class="m-0">
+					{{ fullUserName() }}
+				</h2>
+
+				@if (readonly()) {
+					@if (user().following) {
+						<p-button
+							[outlined]="true"
+							icon="pi pi-check"
+							label="Seguindo"
+							(click)="unfollow.emit()"
+						>
+						</p-button>
+					} @else {
+						<p-button
+							(click)="follow.emit()"
+						>
+							Seguir
+						</p-button>
+					}
+				}
+			</div>
+		</div>
+	}
+	@else {
+		<app-user-info-loading/>
+	}
+</div>

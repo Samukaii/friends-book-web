@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/themes/custom/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.card {
+	box-shadow: 0 2px 5px 0 #c9c9c9;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 4px;
+	background-color: white;
+}
+
+:root {
+	--primary-color: #bb222e;
+	--primary-color-hover: #ec535c;
+	--primary-color-active: #de545f;
+	--primary-color-focus: #de545f;
+	--secondary-color: rgb(0, 48, 92);
+	--background-color: #e8ecff;
+	--border: solid 1px rgba(0, 0, 0, 0.15);
+}
+
+.border {
+	&--right {
+		border-right: var(--border);
+	}
+
+	&--left {
+		border-left: var(--border);
+	}
+
+	&--top {
+		border-top: var(--border);
+	}
+
+	&--bottom {
+		border-bottom: var(--border);
+	}
+
+	&--all {
+		border: var(--border);
+	}
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+.avatar {
+	background-color: var(--secondary-color);
+}

@@ -1,0 +1,25 @@
+.friends {
+	width: 850px;
+}
+
+.container {
+	height: 70px;
+}
+
+.friend {
+	::ng-deep {
+		.p-avatar-lg {
+			--size: 61px;
+			width: var(--size);
+			height: var(--size);
+		}
+	}
+}
+
+:host {
+	height: fit-content;
+	display: block;
+}
+p-carousel {
+	width: 100%;
+}

@@ -1,0 +1,24 @@
+<div class="flex flex-column followers">
+	@if(!loading()) {
+		<h2>{{cardTitle()}}</h2>
+		<div class="followers__content flex gap-2 flex-wrap">
+			@for (user of users(); track user.id) {
+				<div class="follower flex flex-column gap-1">
+					<app-avatar
+						appUserAvatarInfo
+						[userId]="user.id"
+						size="xlarge"
+						shape="square"
+						[imageUrl]="user.profile?.url"
+					/>
+					<h3 class="m-0">
+						{{ user.name }} {{ user.surname }}
+					</h3>
+				</div>
+			}
+		</div>
+	}
+	@else {
+		<app-users-card-list-loading/>
+	}
+</div>

@@ -1,0 +1,19 @@
+<div class="navigation border--right" aria-label="Actions">
+	<div class="w-full flex align-items-center gap-2 border--bottom pb-2">
+		<app-avatar
+			class="cursor-pointer"
+			[imageUrl]="currentUser()?.profile?.url"
+		/>
+
+		<p class="user-name m-0 font-bold">
+			{{ fullName() }}
+		</p>
+	</div>
+
+	<p-menu
+		class="block w-full"
+		[model]="navigation"
+	>
+
+	</p-menu>
+</div>

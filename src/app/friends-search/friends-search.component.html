@@ -1,0 +1,24 @@
+<span class="p-input-icon-left">
+	<i class="pi pi-search"></i>
+	<p-autoComplete [suggestions]="users"
+					placeholder="Busque por um amigo"
+					(completeMethod)="filterCountry($event)" optionLabel="name">
+	<ng-template let-user pTemplate="item">
+		<div class="user flex align-items-start gap-2">
+			<p-avatar
+				[style]="{ 'background-color': 'var(--secondary-color)', color: '#ffffff' }"
+				shape="circle"
+				[image]="getImage | call : user.profile?.url"
+				icon="pi pi-user"
+				size="normal"
+			/>
+			<div class="flex flex-column gap-2">
+				<strong class="m-0">{{ user.name + " " + user.surname }}</strong>
+				<p class="m-0">{{ user.friends | number }} amigos</p>
+			</div>
+		</div>
+	</ng-template>
+</p-autoComplete>
+
+</span>
+

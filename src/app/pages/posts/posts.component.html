@@ -1,0 +1,8 @@
+<div class="container">
+	<app-posts-create/>
+	<app-posts-list
+		[actionsFn]="actionsFn"
+		[posts]="repository.data()"
+		[loading]="repository.loading()"
+	/>
+</div>

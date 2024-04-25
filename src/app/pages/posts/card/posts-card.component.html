@@ -1,0 +1,32 @@
+<div
+	class="card flex flex-column gap-2">
+	<div class="flex justify-content-between">
+		<div class="flex gap-2 align-items-center">
+			<app-avatar
+				appUserAvatarInfo
+				[userId]="post().createdBy.id"
+				[imageUrl]="post().createdBy.profile?.url"
+			>
+
+			</app-avatar>
+			<strong>
+				{{ userName() }}
+			</strong>
+
+			{{ getTime | call: post() }}
+		</div>
+
+
+		<p-menu #menu [model]="actions()" [popup]="true" ></p-menu>
+
+		@if(canShowActions()) {
+			<p-button [text]="true" (click)="menu.toggle($event)" icon="pi pi-ellipsis-v"></p-button>
+		}
+	</div>
+	<p class="description">{{ post().title }}</p>
+
+
+	<p-image [preview]="true" imageClass="image" [src]="getImage | call: post().image.url" alt="">:
+	</p-image>
+
+</div>

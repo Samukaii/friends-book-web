@@ -1,0 +1,13 @@
+:host {
+	display: block;
+	width: 100%;
+	height: 550px;
+}
+
+.user-name, .profile {
+	position: relative;
+}
+
+.profile {
+	clip-path: inset(calc(6rem) 0 0);
+}

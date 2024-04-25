@@ -1,0 +1,8 @@
+<app-profile
+	[info]="repository.data()"
+	notFoundMessage="Você ainda não criou nenhuma publicação"
+	[loading]="repository.loading()"
+	(coverChange)="onCoverChange($event)"
+	(profileChange)="onProfileChange($event)"
+	(createPost)="create($event)"
+/>

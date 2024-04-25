@@ -1,0 +1,43 @@
+<div class="container">
+	<app-user-info
+		[user]="info().user"
+		[readonly]="readonly()"
+		[loading]="loading()"
+		(coverChange)="coverChange.emit($event)"
+		(profileChange)="coverChange.emit($event)"
+		(follow)="follow.emit()"
+		(unfollow)="unfollow.emit()"
+	/>
+
+	<div class="user-info-container p-3 flex gap-3">
+		<div class="posts flex w-full flex-column gap-4">
+			@if (!readonly()) {
+				<app-posts-creator
+					(create)="create($event)"
+				/>
+			}
+			<app-posts-list
+				[loading]="loading()"
+				[posts]="info().posts"
+				[notFoundMessage]="notFoundMessage()"
+			/>
+		</div>
+
+		<div class="user-info flex flex-column gap-2">
+			<div class="flex flex-column gap-4">
+				<app-users-card-list
+					[users]="info().followers"
+					[loading]="loading()"
+					[cardTitle]="'Seguidores (' + info().followers.length + ')'"
+				/>
+
+				<app-users-card-list
+					[users]="info().following"
+					[loading]="loading()"
+					[cardTitle]="'Seguindo (' + info().following.length + ')'"
+				/>
+			</div>
+		</div>
+
+	</div>
+</div>
