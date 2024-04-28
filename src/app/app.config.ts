@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { authInterceptor } from "./core/interceptors/auth.interceptor";
 import { ConfirmationService, MessageService } from "primeng/api";
 import { loggedInterceptor } from "./core/interceptors/logged.interceptor";
+import { buttonAutoLoadingInterceptor } from "./core/interceptors/button-auto-loading.interceptor";
 
 export const appConfig: ApplicationConfig = {
 	providers: [
@@ -17,7 +18,8 @@ export const appConfig: ApplicationConfig = {
 			withFetch(),
 			withInterceptors([
 				authInterceptor,
-				loggedInterceptor
+				loggedInterceptor,
+				buttonAutoLoadingInterceptor
 			])
 		),
 		provideAnimationsAsync(),

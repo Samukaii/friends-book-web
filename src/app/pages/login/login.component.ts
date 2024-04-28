@@ -35,7 +35,7 @@ import { value } from "../register/register.component";
 })
 export class LoginComponent {
 	form = inject(FormBuilder).nonNullable.group({
-		email: [value<string>(), [Validators.required, Validators.email]],
+		login: [value<string>(), [Validators.required, Validators.email]],
 		password: [value<string>(), [Validators.required, Validators.minLength(8)]],
 	});
 

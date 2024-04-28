@@ -1,0 +1,20 @@
+<div class="container p-fluid">
+	<span class="p-input-icon-left p-float-label">
+		<i class="pi pi-search"></i>
+		<input
+			placeholder="Informe aqui o nome de quem você deseja encontrar"
+			id="search"
+			type="text"
+			pInputText
+			[(ngModel)]="search"
+		/>
+		<label for="search">Nome</label>
+	</span>
+	<app-search-friends-list
+		(follow)="follow($event)"
+		(unFollow)="unFollow($event)"
+		[loading]="loading()"
+		[users]="users()"
+	/>
+
+</div>

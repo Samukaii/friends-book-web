@@ -16,8 +16,11 @@ strong {
 	text-transform: capitalize;
 }
 p-image ::ng-deep {
+	.p-image {
+		width: 100%;
+	}
 	.image {
-		max-width: 100%;
+		width: 100%;
 	}
 }
 

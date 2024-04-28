@@ -1,0 +1,22 @@
+<div class="flex pt-2 pb-2 pl-3 pr-3 flex-column gap-2">
+	@for (item of items(); track item) {
+		<div class="flex justify-content-between">
+			<div class="flex align-items-center gap-2">
+				<p-skeleton
+					shape="circle"
+					width="50px"
+					height="50px"
+				/>
+				<p-skeleton
+					width="100px"
+					height="15px"
+				/>
+			</div>
+
+			<p-skeleton
+				width="70px"
+				height="35px"
+			/>
+		</div>
+	}
+</div>

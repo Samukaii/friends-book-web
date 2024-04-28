@@ -1,0 +1,50 @@
+<ul class="card list-none flex flex-column p-0">
+	@if(!loading()) {
+		@for (user of users(); track user.id) {
+			<li class="user-item cursor-pointer flex pr-3 pt-2 pb-2 pl-3 align-items-center justify-content-between gap-2">
+				<div class="flex gap-2 align-items-center">
+					<app-avatar
+						[imageUrl]="user.profile?.url"
+						shape="circle"
+						size="large"
+					/>
+					<div class="flex flex-column gap-1">
+						<div class="flex gap-1">
+							<strong>
+								{{ user.name }} {{ user.surname }}
+							</strong>
+							<p class="m-0 nickname">
+								{{'@' + user.nickname}}
+							</p>
+						</div>
+						<p class="m-0">
+							{{user.followersCount}} Seguidores
+						</p>
+					</div>
+				</div>
+
+				<div class="follow">
+					@if (user.following) {
+						<p-button
+							appAutoLoading
+							(click)="unFollow.emit(user)"
+							class="solid-button"
+							[outlined]="true"
+							icon="pi pi-check"
+							label="Seguindo"
+						>
+						</p-button>
+					} @else {
+						<p-button
+							appAutoLoading
+							(click)="follow.emit(user)"
+							label="Seguir"
+						/>
+					}
+				</div>
+			</li>
+		}
+	} @else {
+		<app-search-friends-list-loading/>
+	}
+</ul>

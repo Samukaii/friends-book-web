@@ -33,7 +33,7 @@ export class MenuComponent {
 		{
 			label: "Encontrar amigos",
 			icon: PrimeIcons.SEARCH,
-			routerLink: "my-profile"
+			routerLink: "search-friends"
 		},
 		{
 			label: "Sair",

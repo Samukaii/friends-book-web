@@ -4,7 +4,7 @@ import { filter, map } from "rxjs";
 import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
 import { isAtBrowser } from "./authentication.service";
 
-type Generic = Record<string, any>;
+export type Generic = Record<string, any>;
 
 const collectRouteData = (router: Router): Generic => {
 	let data = {};

@@ -6,6 +6,7 @@ import { RegisterComponent } from "./pages/register/register.component";
 import { MyProfileComponent } from "./pages/my-profile/my-profile.component";
 import { AppRoutes } from "./shared/models/app-routes";
 import { UserProfileComponent } from "./pages/user-profile/user-profile.component";
+import { SearchFriendsComponent } from "./pages/search-friends/search-friends.component";
 
 export const routes: AppRoutes = [
 	{
@@ -25,6 +26,13 @@ export const routes: AppRoutes = [
 	{
 		path: "posts",
 		component: PostsComponent,
+		canActivate: [
+			authenticatedGuard
+		]
+	},
+	{
+		path: "search-friends",
+		component: SearchFriendsComponent,
 		canActivate: [
 			authenticatedGuard
 		]

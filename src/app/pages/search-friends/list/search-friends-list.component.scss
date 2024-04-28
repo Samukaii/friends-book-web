@@ -1,0 +1,18 @@
+.solid-button ::ng-deep button{
+	background-color: white;
+}
+
+.user-item {
+	transition: .3s;
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	&:active {
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+}
+
+.nickname {
+	color: var(--primary-color)
+}
