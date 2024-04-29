@@ -12,6 +12,8 @@ import { RippleModule } from "primeng/ripple";
 import { NgOptimizedImage } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { value } from "../register/register.component";
+import { FormInputComponent } from "../../shared/components/form/form-input/form-input.component";
+import { ButtonAutoLoadingDirective } from "../../shared/directives/button-auto-loading.directive";
 
 @Component({
   selector: 'app-login',
@@ -28,14 +30,16 @@ import { value } from "../register/register.component";
 		ButtonModule,
 		RippleModule,
 		NgOptimizedImage,
-		RouterLink
+		RouterLink,
+		FormInputComponent,
+		ButtonAutoLoadingDirective
 	],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 	form = inject(FormBuilder).nonNullable.group({
-		login: [value<string>(), [Validators.required, Validators.email]],
+		login: [value<string>(), [Validators.required]],
 		password: [value<string>(), [Validators.required, Validators.minLength(8)]],
 	});
 

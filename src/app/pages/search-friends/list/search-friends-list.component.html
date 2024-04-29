@@ -1,7 +1,10 @@
 <ul class="card list-none flex flex-column p-0">
 	@if(!loading()) {
 		@for (user of users(); track user.id) {
-			<li class="user-item cursor-pointer flex pr-3 pt-2 pb-2 pl-3 align-items-center justify-content-between gap-2">
+			<li
+				appUserAvatarInfo
+				[userId]="user.id"
+				class="user-item cursor-pointer flex pr-3 pt-2 pb-2 pl-3 align-items-center justify-content-between gap-2">
 				<div class="flex gap-2 align-items-center">
 					<app-avatar
 						[imageUrl]="user.profile?.url"
@@ -23,7 +26,7 @@
 					</div>
 				</div>
 
-				<div class="follow">
+				<div class="follow" (click)="$event.stopPropagation()">
 					@if (user.following) {
 						<p-button
 							appAutoLoading

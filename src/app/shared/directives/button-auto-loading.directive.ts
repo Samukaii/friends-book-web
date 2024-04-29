@@ -24,6 +24,6 @@ export class ButtonAutoLoadingDirective implements ButtonAutoLoading{
 		this.detector.markForCheck();
 
 		if(enabled) this.renderer.setStyle(this.element, 'pointerEvents', 'none');
-		else this.renderer.setStyle(this.element, 'pointerEvents', 'default');
+		else this.renderer.setStyle(this.element, 'pointerEvents', 'auto');
 	}
 }

@@ -4,6 +4,8 @@ import { ButtonModule } from "primeng/button";
 import { User } from "../../../shared/models/user";
 import { SearchFriendsListLoadingComponent } from "./loading/search-friends-list-loading.component";
 import { ButtonAutoLoadingDirective } from "../../../shared/directives/button-auto-loading.directive";
+import { RouterLink } from "@angular/router";
+import { UserAvatarInfoDirective } from "../../../shared/directives/user-avatar-info.directive";
 
 @Component({
   selector: 'app-search-friends-list',
@@ -12,7 +14,9 @@ import { ButtonAutoLoadingDirective } from "../../../shared/directives/button-au
 		AvatarComponent,
 		ButtonModule,
 		SearchFriendsListLoadingComponent,
-		ButtonAutoLoadingDirective
+		ButtonAutoLoadingDirective,
+		RouterLink,
+		UserAvatarInfoDirective
 	],
   templateUrl: './search-friends-list.component.html',
   styleUrl: './search-friends-list.component.scss'

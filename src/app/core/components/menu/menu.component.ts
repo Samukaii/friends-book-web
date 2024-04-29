@@ -22,21 +22,25 @@ export class MenuComponent {
 	navigation: MenuItem[] = [
 		{
 			label: "Página inicial",
+			tooltip: "Página inicial",
 			icon: PrimeIcons.HOME,
 			routerLink: "posts"
 		},
 		{
 			label: "Meu perfil",
+			tooltip: "Meu perfil",
 			icon: PrimeIcons.USER,
 			routerLink: "my-profile"
 		},
 		{
 			label: "Encontrar amigos",
+			tooltip: "Encontrar amigos",
 			icon: PrimeIcons.SEARCH,
 			routerLink: "search-friends"
 		},
 		{
 			label: "Sair",
+			tooltip: "Sair",
 			icon: PrimeIcons.SIGN_OUT,
 			iconStyle: {color: "red"},
 			styleClass: "sign-out-menu",

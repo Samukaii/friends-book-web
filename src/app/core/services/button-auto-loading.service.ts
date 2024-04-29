@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ButtonAutoLoading } from "../../shared/models/button-auto-loading";
-import { HttpRequest, HttpResponse } from "@angular/common/http";
+import { HttpErrorResponse, HttpRequest, HttpResponse } from "@angular/common/http";
 
 @Injectable({
 	providedIn: 'root'
@@ -48,7 +48,7 @@ export class ButtonAutoLoadingService {
 		}
 	}
 
-	registerResponse(response: HttpResponse<any>) {
+	registerResponse(response: HttpResponse<any> | HttpErrorResponse) {
 		if(this.manualLoading) return;
 
 		if(response.url === this.requestRegistered) {

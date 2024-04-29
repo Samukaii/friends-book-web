@@ -16,6 +16,25 @@
 	}
 }
 
+.navigation-icon {
+	min-width: 250px;
+	height: 100vh;
+	padding: 1rem;
+
+	p-menu ::ng-deep {
+		.p-menu {
+			border: none;
+			background-color: transparent;
+		}
+
+		.p-menu, .p-menu-list {
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+}
+
+
 :host {
 	height: 100%;
 	display: block;

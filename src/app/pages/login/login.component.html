@@ -1,4 +1,4 @@
-<div class="card p-4 w-full lg:w-6">
+<div class="card p-4 w-full xl:w-6">
 	<div class="text-center mb-5">
 		<img ngSrc="assets/images/logo.svg" class="mb-1" height="50" width="300" alt="">
 		<div class="text-900 text-3xl font-medium mb-3">Bem vindo de volta</div>
@@ -9,14 +9,27 @@
 	</div>
 
 	<form (ngSubmit)="onSubmit()" [formGroup]="form">
-		<label for="login" class="block text-900 font-medium mb-2">E-mail ou nome de usuário</label>
-		<input id="login" formControlName="login" type="text" placeholder="Informe seu e-mail ou nome de usuário" pInputText
-			   class="w-full mb-3">
+		<app-form-input
+			label="E-mail ou nome de usuário"
+			placeholder="Informe seu e-mail ou nome de usuário"
+			[form]="form"
+			name="login"
+		/>
 
-		<label for="password" class="block text-900 font-medium mb-2">Senha</label>
-		<input id="password" formControlName="password" type="password" placeholder="Senha" pInputText
-			   class="w-full mb-3">
+		<app-form-input
+			label="Senha"
+			placeholder="Sua senha"
+			[form]="form"
+			type="password"
+			name="password"
+		/>
 
-		<button pButton pRipple label="Entrar" icon="pi pi-user" class="w-full"></button>
+		<p-button
+			appAutoLoading
+			class="w-full"
+			label="Entrar"
+			icon="pi pi-user"
+			type="submit"
+		/>
 	</form>
 </div>

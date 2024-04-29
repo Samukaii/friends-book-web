@@ -1,16 +1,4 @@
-import {
-	Directive,
-	EventEmitter,
-	HostBinding,
-	HostListener,
-	inject,
-	input,
-	OnDestroy,
-	OnInit,
-	Output
-} from '@angular/core';
-import { DOCUMENT } from "@angular/common";
-import { Tooltip } from "primeng/tooltip/tooltip";
+import { Directive, HostBinding, HostListener, inject, input } from '@angular/core';
 import { Router } from "@angular/router";
 import { CurrentUserService } from "../../core/services/current-user.service";
 
