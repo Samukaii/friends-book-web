@@ -2,10 +2,6 @@
 	<div class="text-center mb-5">
 		<img ngSrc="assets/images/logo.svg" class="mb-1" height="50" width="300" alt="">
 		<div class="text-900 text-3xl font-medium mb-3">Bem vindo de volta</div>
-		<div>
-			<span class="text-600 font-medium line-height-3">Não tem uma conta?</span>
-			<a routerLink="/register" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Crie agora</a>
-		</div>
 	</div>
 
 	<form (ngSubmit)="onSubmit()" [formGroup]="form">
@@ -31,5 +27,10 @@
 			icon="pi pi-user"
 			type="submit"
 		/>
+
+		<div class="mt-4 pt-2 border--top flex justify-content-center">
+			<span class="text-600 font-medium line-height-3">Não tem uma conta?</span>
+			<a routerLink="/register" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Crie agora</a>
+		</div>
 	</form>
 </div>

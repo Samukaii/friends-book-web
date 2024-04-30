@@ -26,7 +26,8 @@
 	<p class="description">{{ post().title }}</p>
 
 
-	<p-image [preview]="true" imageClass="image" [src]="getImage | call: post().image.url" alt="">:
+	<p-image
+		[preview]="true" imageClass="image" [src]="getImage | call: post().image.url" alt="">:
 	</p-image>
 
 </div>

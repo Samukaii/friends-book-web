@@ -23,21 +23,22 @@
 			/>
 		</div>
 
-		<div class="user-info flex flex-column gap-2">
-			<div class="flex flex-column gap-4">
-				<app-users-card-list
-					[users]="info().followers"
-					[loading]="loading()"
-					[cardTitle]="'Seguidores (' + info().followers.length + ')'"
-				/>
+		@if (showFollowers()) {
+			<div class="user-info flex flex-column gap-2">
+				<div class="flex flex-column gap-4">
+					<app-users-card-list
+						[users]="info().followers"
+						[loading]="loading()"
+						[cardTitle]="'Seguidores (' + info().followers.length + ')'"
+					/>
 
-				<app-users-card-list
-					[users]="info().following"
-					[loading]="loading()"
-					[cardTitle]="'Seguindo (' + info().following.length + ')'"
-				/>
+					<app-users-card-list
+						[users]="info().following"
+						[loading]="loading()"
+						[cardTitle]="'Seguindo (' + info().following.length + ')'"
+					/>
+				</div>
 			</div>
-		</div>
-
+		}
 	</div>
 </div>

@@ -10,6 +10,7 @@ import { ButtonModule } from "primeng/button";
 import { RippleModule } from "primeng/ripple";
 import { SearchFriendsListComponent } from "./list/search-friends-list.component";
 import { ButtonAutoLoadingService } from "../../core/services/button-auto-loading.service";
+import { FriendsRepositoryService } from "../../core/components/friends/friends-repository.service";
 
 @Component({
   selector: 'app-search-friends',
@@ -31,6 +32,7 @@ export class SearchFriendsComponent {
 	protected users = signal<User[]>([]);
 
 	private usersService = inject(UsersService);
+	private friendsRepository = inject(FriendsRepositoryService);
 	private detector = inject(ChangeDetectorRef);
 	private loadingService = inject(ButtonAutoLoadingService);
 
@@ -55,6 +57,7 @@ export class SearchFriendsComponent {
 
 		this.usersService.unfollow($event.id).subscribe(() => {
 			this.getUsers(this.search());
+			this.friendsRepository.fetch();
 		});
 	}
 
@@ -63,6 +66,7 @@ export class SearchFriendsComponent {
 
 		this.usersService.follow($event.id).subscribe(() => {
 			this.getUsers(this.search());
+			this.friendsRepository.fetch();
 		});
 	}
 }

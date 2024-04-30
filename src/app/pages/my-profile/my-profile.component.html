@@ -1,6 +1,7 @@
 <app-profile
 	[info]="repository.data()"
 	notFoundMessage="Você ainda não criou nenhuma publicação"
+	[showFollowers]="!breakpoints.isSmallScreen()"
 	[loading]="repository.loading()"
 	(coverChange)="onCoverChange($event)"
 	(profileChange)="onProfileChange($event)"

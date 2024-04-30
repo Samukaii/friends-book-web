@@ -2,6 +2,7 @@
 	[info]="repository.data()"
 	(follow)="follow()"
 	(unfollow)="unfollow()"
+	[showFollowers]="!breakpoints.isSmallScreen()"
 	notFoundMessage="Este usuário ainda não criou nenhuma publicação"
 	[loading]="repository.loading()"
 	[readonly]="true"

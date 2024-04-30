@@ -1,16 +1,19 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, DestroyRef, inject, signal } from '@angular/core';
 import { MenuItem, PrimeIcons } from "primeng/api";
 import { AuthenticationService } from "../../services/authentication.service";
 import { MenuModule } from "primeng/menu";
 import { AvatarComponent } from "../../../shared/components/avatar/avatar.component";
 import { CurrentUserService } from "../../services/current-user.service";
+import { BreakpointsService } from "../../services/breakpoints.service";
+import { UserAvatarInfoDirective } from "../../../shared/directives/user-avatar-info.directive";
 
 @Component({
 	selector: 'app-menu',
 	standalone: true,
 	imports: [
 		MenuModule,
-		AvatarComponent
+		AvatarComponent,
+		UserAvatarInfoDirective
 	],
 	templateUrl: './menu.component.html',
 	styleUrl: './menu.component.scss'
@@ -18,8 +21,9 @@ import { CurrentUserService } from "../../services/current-user.service";
 export class MenuComponent {
 	authentication = inject(AuthenticationService);
 	userService = inject(CurrentUserService);
+	breakpoints = inject(BreakpointsService);
 
-	navigation: MenuItem[] = [
+	private navigationItems: MenuItem[] = [
 		{
 			label: "Página inicial",
 			tooltip: "Página inicial",
@@ -51,8 +55,21 @@ export class MenuComponent {
 	currentUser = computed(() => this.userService.user());
 	fullName = computed(() => {
 		const user = this.currentUser();
-		if(!user) return;
+		if (!user) return;
 
 		return `${user.name} ${user.surname}`
+	});
+
+	navigation = computed(() => {
+		const isSmall = this.breakpoints.isSmallScreen();
+
+		return this.navigationItems.map(item => {
+			if (isSmall) return {
+				...item,
+				label: undefined
+			};
+
+			return item;
+		});
 	});
 }

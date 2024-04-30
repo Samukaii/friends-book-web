@@ -36,6 +36,7 @@ export class ProfileComponent {
 	readonly = input(false);
 	loading = input(false);
 	notFoundMessage = input("");
+	showFollowers = input(false);
 
 	info = input.required<MyProfileData>();
 

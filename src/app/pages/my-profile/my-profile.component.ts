@@ -12,6 +12,7 @@ import { FileUploadDirective } from "../../shared/directives/file-upload.directi
 import { UsersService } from "./users.service";
 import { JsonPipe } from "@angular/common";
 import { ProfileComponent } from "../../shared/components/profile/profile.component";
+import { BreakpointsService } from "../../core/services/breakpoints.service";
 
 @Component({
   selector: 'app-my-profile',
@@ -35,6 +36,7 @@ export class MyProfileComponent implements OnInit {
 	private currentUserService = inject(CurrentUserService);
 	private actions = inject(PostsActionsService);
 	private usersService = inject(UsersService);
+	breakpoints = inject(BreakpointsService);
 
 	currentUser = computed(() => this.currentUserService.user());
 

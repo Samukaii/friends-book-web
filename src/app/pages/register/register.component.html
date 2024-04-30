@@ -1,10 +1,6 @@
 <div class="card p-4 w-full xl:w-6">
 	<div class="text-center mb-5">
 		<img alt="" class="mb-1" height="50" ngSrc="assets/images/logo.svg" width="300">
-		<div>
-			<span class="text-600 font-medium line-height-3">Já tem uma conta?</span>
-			<a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" routerLink="/login">Entre agora</a>
-		</div>
 	</div>
 
 	<form (ngSubmit)="onSubmit()" [formGroup]="form">
@@ -53,5 +49,10 @@
 			label="Criar conta"
 			type="submit">
 		</p-button>
+
+		<div class="pt-2 border--top mt-4 flex justify-content-center">
+			<span class="text-600 font-medium line-height-3">Já tem uma conta?</span>
+			<a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" routerLink="/login">Entre agora</a>
+		</div>
 	</form>
 </div>

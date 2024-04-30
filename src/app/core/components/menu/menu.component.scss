@@ -3,6 +3,21 @@
 	height: 100vh;
 	padding: 1rem;
 
+	&--small {
+		min-width: fit-content;
+
+		p-menu ::ng-deep {
+			.p-menuitem-icon {
+				margin: 0;
+			}
+
+			.p-menuitem a {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+
 	p-menu ::ng-deep {
 		.p-menu {
 			border: none;
