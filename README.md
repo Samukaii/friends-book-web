@@ -28,7 +28,6 @@ Altere a imagem de capa ou de perfil do seu usuário, veja quem te segue e quem 
 
 Publique o que quiser, sinta-se livre para expressar seus pensamentos e deixe que outras pessoas apreciem o que você tem a dizer
 
-
 ### ✅ Encontre qualquer amigo
 ![image](https://github.com/Samukaii/friends-book-web/assets/54710691/21a62c91-52cb-4dc0-9765-ed0841dd62f0)
 
@@ -46,6 +45,10 @@ git clone https://github.com/Samukaii/friends-book-web.git
 cd friends-book-web
 npm start
 ```
+
+## Demonstração em vídeo
+
+https://github.com/Samukaii/friends-book-web/assets/54710691/d6f2c2f6-78e1-45dd-8ea0-046a5fe70ce3
 
 ## Contribuição
 
