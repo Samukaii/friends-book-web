@@ -48,6 +48,9 @@ npm start
 
 ## Demonstração em vídeo
 
+> [!TIP]
+> **Ative o som para melhorar a experiência 🔈**
+
 https://github.com/Samukaii/friends-book-web/assets/54710691/d6f2c2f6-78e1-45dd-8ea0-046a5fe70ce3
 
 ## Contribuição
