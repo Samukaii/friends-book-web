@@ -1,27 +1,41 @@
-# InstaFrame
+# Friends Book
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+Friends book é um projeto de rede social com várias funcionalidades essenciais para todo projeto do gênero
 
-## Development server
+## Requisitos
+- Node 18 ou superior
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
+### Autenticação / criação de usuários
+![image](https://github.com/Samukaii/friends-book-web/assets/54710691/b5258030-6404-4537-b5fb-1636c5e7f63d)
+O projeto conta com sistema de autenticação JWT
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Área de perfil e personalização
+![image](https://github.com/Samukaii/friends-book-web/assets/54710691/c8dd865a-a485-4054-bfa6-7d1f68c5aba8)
 
-## Build
+Altere a imagem de capa ou de perfil do seu usuário, veja quem te segue e quem você está seguindo e veja todas as suas publicações
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Publicações com imagens e textos
+![image](https://github.com/Samukaii/friends-book-web/assets/54710691/f0cabebf-911e-48f4-afc6-d57d18b1f951)
 
-## Running unit tests
+Publique o que quiser, sinta-se livre para expressar seus pensamentos e deixe que outras pessoas apreciem o que você tem a dizer
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Encontre qualquer amigo
+![image](https://github.com/Samukaii/friends-book-web/assets/54710691/21a62c91-52cb-4dc0-9765-ed0841dd62f0)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Afim de fazer novas amizades? Entre na área "Encontrar amigos" e pesquise qualquer usuário cadastrado na plataforma
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Segmentação de conteúdo
+![image](https://github.com/Samukaii/friends-book-web/assets/54710691/1133bb36-add7-44ce-b9d4-619e7a4db01b)
+
+Você não precisa ver publicações de todo mundo, veja apenas publicações de quem você segue
+
+## Como usar
+```shell
+git clone https://github.com/Samukaii/friends-book-web.git
+cd friends-book-web
+npm start
+```
